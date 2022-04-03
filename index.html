@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Duke Nuke Says</title>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Tracking code -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-34470404-1"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol ? "https://" : "http://") +
+          "stats.g.doubleclick.net/dc.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <h2>Duke Nukem Says...</h2>
+      <div id="sayings"></div>
+    </div>
+    <div id="link">
+      Created by a bored employee at
+      <a href="http://adsgames.net">A.D.S. Games</a>
+    </div>
+
+    <script type="text/javascript">
+      fetch("/constants/sayings.json")
+        .then((response) => response.json())
+        .then((sayings) => {
+          const sayingsElem = document.getElementById("sayings");
+
+          sayings.forEach((saying) => {
+            const linkElem = document.createElement("a");
+            linkElem.innerHTML = saying.text;
+            linkElem.href = "/play?sound=" + saying.id;
+
+            sayingsElem.appendChild(linkElem);
+            sayingsElem.appendChild(document.createElement("br"));
+          });
+        });
+    </script>
+  </body>
+</html>

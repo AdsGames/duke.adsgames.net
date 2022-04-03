@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Duke Nuke Says</title>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Tracking code -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-34470404-1"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol ? "https://" : "http://") +
+          "stats.g.doubleclick.net/dc.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <h2 id="title"></h2>
+      <audio controls autoplay id="audio">
+        <p>Your user agent does not support the HTML5 Audio element.</p>
+      </audio>
+    </div>
+    <div id="link">
+      <a href="/">More from DukeNukemSays</a>
+    </div>
+    <div id="link">
+      Created by a bored employee at
+      <a href="https://adsgames.net">A.D.S. Games</a>
+    </div>
+
+    <!-- Banner ad -->
+    <div class="fw-advertisement">
+      <script
+        async
+        src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
+      <!-- Duke -->
+      <ins
+        class="adsbygoogle"
+        style="display: inline-block; width: 468px; height: 60px"
+        data-ad-client="ca-pub-2991077597167073"
+        data-ad-slot="5002627219"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+      <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const soundId = urlParams.get("sound");
+        const audioElem = document.getElementById("audio");
+
+        const formats = [
+          { ext: "mp3", mime: "audio/mpeg" },
+          { ext: "ogg", mime: "audio/ogg" },
+        ];
+
+        formats.forEach((format) => {
+          const sourceElem = document.createElement("source");
+          sourceElem.setAttribute("type", format.mime);
+          sourceElem.setAttribute(
+            "src",
+            `sounds/${format.ext}/${soundId}.${format.ext}`
+          );
+          audioElem.appendChild(sourceElem);
+        });
+
+        fetch("/constants/sayings.json")
+          .then((response) => response.json())
+          .then((sayings) => {
+            const sayingsElem = document.getElementById("sayings");
+            const saying = sayings.find((saying) => saying.id === soundId);
+            if (saying) {
+              const titleElem = document.getElementById("title");
+              titleElem.innerHTML = saying.text;
+            }
+          });
+      </script>
+    </div>
+  </body>
+</html>
