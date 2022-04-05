@@ -1,0 +1,32 @@
+name: "Deploy [duke.adsgames.net]"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: "Deploy Site"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: s3-actions/s3cmd@v1.2.0
+        with:
+          provider: linode
+          region: "us-east-1"
+          access_key: ${{ secrets.LINODE_BUCKET_ACCESS_KEY }}
+          secret_key: ${{ secrets.LINODE_BUCKET_SECRET_KEY }}
+
+      - name: Deploy
+        run: |
+          s3cmd ws-create --ws-index=index.html s3://duke.adsgames.net/
+          s3cmd sync ./src/ s3://duke.adsgames.net/ \
+            --delete-removed \
+            --delete-after \
+            --guess-mime-type \
+            --no-mime-magic \
+            --acl-public
