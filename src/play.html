@@ -3,6 +3,7 @@
   <head>
     <title>Duke Nuke Says</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Tracking code -->
     <script type="text/javascript">
@@ -82,6 +83,7 @@
             if (saying) {
               const titleElem = document.getElementById("title");
               titleElem.innerHTML = saying.text;
+              document.title += ` - ${saying.text}`;
             }
           });
       </script>

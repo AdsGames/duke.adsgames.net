@@ -3,6 +3,7 @@
   <head>
     <title>Duke Nuke Says</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Tracking code -->
     <script type="text/javascript">
@@ -41,7 +42,7 @@
           sayings.forEach((saying) => {
             const linkElem = document.createElement("a");
             linkElem.innerHTML = saying.text;
-            linkElem.href = "/play?sound=" + saying.id;
+            linkElem.href = "/play.html?sound=" + saying.id;
 
             sayingsElem.appendChild(linkElem);
             sayingsElem.appendChild(document.createElement("br"));
