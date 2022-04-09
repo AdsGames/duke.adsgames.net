@@ -1,10 +1,22 @@
-# Duke Nukem Says
+# duke.adsgames.net
 
-## Running locally
+Duke Nukem Says
 
-use Serve
+## Scripts
 
 ```
-npm i -g serve
-serve .
+# Install packages
+yarn install
+
+# Run the project
+yarn start
+
+# Build the project
+yarn build
+
+# Format project
+yarn format
+
+# Lint the project
+yarn lint
 ```
