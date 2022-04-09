@@ -10,9 +10,25 @@ jobs:
     name: "Deploy Site"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]sx?') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: yarn
+
+      - run: yarn install
+
+      - run: yarn build
 
       - uses: s3-actions/s3cmd@v1.2.0
         with:
@@ -23,10 +39,12 @@ jobs:
 
       - name: Deploy
         run: |
-          s3cmd ws-create --ws-index=index.html s3://duke.adsgames.net/
-          s3cmd sync ./src/ s3://duke.adsgames.net/ \
+          s3cmd ws-create --ws-index=index.html --ws-error=404/index.html s3://duke.adsgames.net/
+          s3cmd sync ./out/ s3://duke.adsgames.net/ \
             --delete-removed \
             --delete-after \
             --guess-mime-type \
             --no-mime-magic \
             --acl-public
+          s3cmd --recursive modify --add-header="Cache-Control: public, max-age=31536000, immutable" s3://duke.adsgames.net/_next/static
+          s3cmd --recursive modify --add-header="Cache-Control: public, max-age=604800, immutable" s3://duke.adsgames.net/sounds

@@ -3,7 +3,7 @@ body {
   background-color: #000000;
 }
 
-#content {
+.content {
   text-align: center;
   margin: 20px auto;
   padding: 10px;
@@ -13,9 +13,15 @@ body {
   border-radius: 8px;
 }
 
-#link {
+.link {
   color: #ffffff;
   text-align: center;
+}
+
+.sayings a {
+  width: 100%;
+  margin-bottom: 16px;
+  display: block;
 }
 
 h2 {
