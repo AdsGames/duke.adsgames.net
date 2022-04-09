@@ -1,8 +1,8 @@
 # duke.adsgames.net
 
-# Duke Nukem Says
-
 [![Deploy [duke.adsgames.net]](https://github.com/AdsGames/duke.adsgames.net/actions/workflows/deploy-site.yml/badge.svg)](https://github.com/AdsGames/duke.adsgames.net/actions/workflows/deploy-site.yml)
+
+Duke Nukem Says
 
 ## Scripts
 
