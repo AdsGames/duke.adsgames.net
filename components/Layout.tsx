@@ -1,18 +1,16 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
-import type { PropsWithChildren } from "react";
 
 interface LayoutProps {
   title: string;
   description: string;
-  isHome?: boolean;
 }
 
-export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
+export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
   title,
   description,
   children,
-  isHome = false,
 }) => (
   <>
     <Head>
@@ -20,15 +18,20 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
       <meta content={description} name="description" />
     </Head>
 
-    <div className="content">{children}</div>
+    <div className="logo">
+      <Link href="/">
+        <a>
+          <Image
+            alt="Duke Nuke Says Logo"
+            height={100}
+            src="/logo.png"
+            width={300}
+          />
+        </a>
+      </Link>
+    </div>
 
-    {!isHome && (
-      <div className="link">
-        <Link href="/">
-          <a>More from DukeNukemSays</a>
-        </Link>
-      </div>
-    )}
+    <div className="content">{children}</div>
 
     <div className="link">
       Created by a bored employee at{" "}
