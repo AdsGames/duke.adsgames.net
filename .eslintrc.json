@@ -44,6 +44,8 @@
     "react/jsx-max-depth": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-no-literals": "off",
+    "react/jsx-no-bind": "off",
+    "react/require-default-props": "off",
 
     "jsx-a11y/anchor-is-valid": "off"
   },
