@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import type { GetStaticProps } from "next";
+import Link from "next/link";
 
 import { Layout } from "@/components/Layout";
 import { SAYINGS } from "@/constants/sayings";
@@ -21,7 +22,8 @@ const SOUND_FORMATS = [
 
 const PlayPage: React.FC<PlayPageProps> = ({ text, sources }) => (
   <Layout description={`Duke Nukem Says: ${text}`} title={text}>
-    <h2>{text}</h2>
+    <h1>Duke Nukem Says...</h1>
+    <h2>{`"${text}"`}</h2>
     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
     <audio autoPlay controls>
       {sources.map(({ mime, url }) => (
@@ -30,6 +32,12 @@ const PlayPage: React.FC<PlayPageProps> = ({ text, sources }) => (
 
       <p>Your user agent does not support the HTML5 Audio element.</p>
     </audio>
+
+    <div className="link">
+      <Link href="/">
+        <a>More from DukeNukemSays</a>
+      </Link>
+    </div>
   </Layout>
 );
 

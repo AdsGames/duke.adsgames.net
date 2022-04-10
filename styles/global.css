@@ -7,15 +7,18 @@ body {
   text-align: center;
   margin: 20px auto;
   padding: 10px;
-  width: 600px;
+  max-width: 800px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 0px 20px 3px #ffffff;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .link {
   color: #ffffff;
   text-align: center;
+  margin: 20px 0;
 }
 
 .sayings a {
@@ -24,35 +27,29 @@ body {
   display: block;
 }
 
-h2 {
-  font: 26px "Verdana", sans-serif;
+h1 {
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 0;
 }
 
-a :visited {
+a:visited {
   color: #0000ff;
 }
 
-a :hover {
-  font-size: 20px;
+a:hover {
   text-decoration: underline;
 }
 
 a {
-  color: #0000ff;
   text-decoration: none;
+  font-size: 20px;
 }
 
-br {
-  display: block;
-  margin: 10px 0;
-  content: " ";
-}
-
-.fw-advertisement {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  width: 468px;
-  height: 60px;
+.logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  display:flex;
+  justify-content: center;
 }
