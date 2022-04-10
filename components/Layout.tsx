@@ -16,7 +16,7 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
 }) => (
   <>
     <Head>
-      <title>{title} - Duke Nuke Says</title>
+      <title>{`${title} - Duke Nuke Says`}</title>
       <meta content={description} name="description" />
     </Head>
 
