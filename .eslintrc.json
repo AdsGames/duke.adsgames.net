@@ -47,6 +47,8 @@
     "react/jsx-no-bind": "off",
     "react/require-default-props": "off",
 
+    "@next/next/no-img-element": "off",
+
     "jsx-a11y/anchor-is-valid": "off"
   },
   "ignorePatterns": ["next-env.d.ts", "next.config.js", "next-sitemap.js"]

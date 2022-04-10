@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Layout } from "@/components/Layout";
 import { SAYINGS } from "@/constants/sayings";
+import * as gtag from "@/lib/gtag";
 
 interface PlayPageProps {
   soundId: string;
@@ -20,12 +21,20 @@ const SOUND_FORMATS = [
   { ext: "ogg", mime: "audio/ogg" },
 ];
 
-const PlayPage: React.FC<PlayPageProps> = ({ text, sources }) => (
+const PlayPage: React.FC<PlayPageProps> = ({ soundId, text, sources }) => (
   <Layout description={`Duke Nukem Says: ${text}`} title={text}>
     <h1>Duke Nukem Says...</h1>
     <h2>{`"${text}"`}</h2>
     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-    <audio autoPlay controls>
+    <audio
+      autoPlay
+      controls
+      onPlay={() => {
+        gtag.event("play_sound", {
+          value: soundId,
+        });
+      }}
+    >
       {sources.map(({ mime, url }) => (
         <source key={url} src={url} type={mime} />
       ))}

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
 interface LayoutProps {
@@ -21,7 +20,7 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
     <div className="logo">
       <Link href="/">
         <a>
-          <Image
+          <img
             alt="Duke Nuke Says Logo"
             height={100}
             src="/logo.png"
