@@ -20,10 +20,7 @@ const SOUND_FORMATS = [
 ];
 
 const PlayPage: React.FC<PlayPageProps> = ({ text, sources }) => (
-  <Layout
-    description={`Duke Nukem Says: ${text}`}
-    title={`${text} - Duke Nuke Says`}
-  >
+  <Layout description={`Duke Nukem Says: ${text}`} title={text}>
     <h2>{text}</h2>
     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
     <audio autoPlay controls>
