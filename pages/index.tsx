@@ -4,7 +4,7 @@ import { Layout } from "@/components/Layout";
 import { SAYINGS } from "@/constants/sayings";
 
 const HomePage = () => (
-  <Layout description="Duke Nukem soundboard" isHome title="Duke Nuke Says">
+  <Layout description="Duke Nukem soundboard" isHome title="Home">
     <h2>Duke Nukem Says...</h2>
     <div className="sayings">
       {SAYINGS.map((saying) => (
