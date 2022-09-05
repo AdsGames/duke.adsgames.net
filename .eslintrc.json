@@ -51,5 +51,9 @@
 
     "jsx-a11y/anchor-is-valid": "off"
   },
-  "ignorePatterns": ["next-env.d.ts", "next.config.js", "next-sitemap.js"]
+  "ignorePatterns": [
+    "next-env.d.ts",
+    "next.config.js",
+    "next-sitemap.config.js"
+  ]
 }
