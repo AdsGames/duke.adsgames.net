@@ -1,0 +1,21 @@
+.list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding:  0 10px;
+}
+
+.list_item {
+  list-style: none;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0;
+}

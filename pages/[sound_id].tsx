@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import type { GetStaticProps } from "next";
-import Link from "next/link";
 
 import { Layout } from "@/components/Layout";
+import { RandomSayings } from "@/components/RandomSayings";
 import { SAYINGS } from "@/constants/sayings";
 import * as gtag from "@/lib/gtag";
 
@@ -14,6 +14,7 @@ interface PlayPageProps {
     mime: string;
     url: string;
   }[];
+  key: string;
 }
 
 const SOUND_FORMATS = [
@@ -22,9 +23,13 @@ const SOUND_FORMATS = [
 ];
 
 const PlayPage: React.FC<PlayPageProps> = ({ soundId, text, sources }) => (
-  <Layout description={`Duke Nukem Says: ${text}`} title={text}>
+  <Layout
+    description={`Duke Nukem Says "${text}". Play Duke Nukem quotes on Duke Nukem Says!`}
+    title={text}
+  >
     <h1>Duke Nukem Says...</h1>
     <h2>{`"${text}"`}</h2>
+
     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
     <audio
       autoPlay
@@ -42,11 +47,7 @@ const PlayPage: React.FC<PlayPageProps> = ({ soundId, text, sources }) => (
       <p>Your user agent does not support the HTML5 Audio element.</p>
     </audio>
 
-    <div className="link">
-      <Link href="/">
-        <a>More from DukeNukemSays</a>
-      </Link>
-    </div>
+    <RandomSayings key={soundId} />
   </Layout>
 );
 
@@ -94,6 +95,7 @@ export const getStaticProps: GetStaticProps<PlayPageProps> = ({ params }) => {
       soundId: saying.id,
       text: saying.text,
       sources,
+      key: saying.id,
     },
   };
 };
