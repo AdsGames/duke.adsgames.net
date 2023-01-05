@@ -1,6 +1,8 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
+import Logo from "../public/logo.webp";
 import styles from "./Layout.module.css";
 
 interface LayoutProps {
@@ -21,7 +23,7 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
       <meta content="Duke Nukem Says" property="og:site_name" />
       <meta content={title} property="og:title" />
       <meta content="website" property="og:type" />
-      <meta content="/logo.png" property="og:image" />
+      <meta content="/logo.webp" property="og:image" />
       <meta content={description} property="og:description" />
 
       <link href="/favicon.png" rel="shortcut icon" />
@@ -37,12 +39,7 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
     <header className={styles.header}>
       <Link href="/">
         <a>
-          <img
-            alt="Duke Nuke Says Logo"
-            height={79}
-            src="/logo.png"
-            width={300}
-          />
+          <Image alt="Duke Nuke Says Logo" height={79} src={Logo} width={300} />
         </a>
       </Link>
     </header>
