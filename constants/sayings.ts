@@ -1,31 +1,36 @@
-export const SAYINGS = [
+export interface Saying {
+  id: string;
+  text: string;
+}
+
+export const SAYINGS: Readonly<Saying[]> = [
   {
     id: "abort",
-    text: "It's time to abort your whole friggin' species.",
+    text: "It's time to abort your whole friggin' species",
   },
   {
     id: "aliens",
-    text: "I'm Duke Nukem, and I'm coming to get the rest of you alien bastards.",
+    text: "I'm Duke Nukem, and I'm coming to get the rest of you alien bastards",
   },
   {
     id: "annoying",
-    text: "Damn, that was annoying.",
+    text: "Damn, that was annoying",
   },
   {
     id: "back_to_work",
-    text: "Get back to work, you slacker.",
+    text: "Get back to work, you slacker",
   },
   {
     id: "better",
-    text: "Ahhhh! Much better.",
+    text: "Ahhhh! Much better",
   },
   {
     id: "birth_control",
-    text: "You're an inspiration for birth control.",
+    text: "You're an inspiration for birth control",
   },
   {
     id: "bitchin",
-    text: "Bitchin'.",
+    text: "Bitchin'",
   },
   {
     id: "blow_it",
@@ -33,7 +38,7 @@ export const SAYINGS = [
   },
   {
     id: "book_em",
-    text: "Hmmm. Book 'em, Dan-o.",
+    text: "Hmmm... Book 'em, Dan-o",
   },
   {
     id: "captains_log",
@@ -41,7 +46,7 @@ export const SAYINGS = [
   },
   {
     id: "clean_up",
-    text: "Looks like clean-up on aisle four.",
+    text: "Looks like clean-up on aisle four",
   },
   {
     id: "come_get_some",
@@ -49,11 +54,11 @@ export const SAYINGS = [
   },
   {
     id: "come_on",
-    text: "Come on.",
+    text: "Come on",
   },
   {
     id: "cry",
-    text: "I'm not cryin' over this.",
+    text: "I'm not cryin' over this",
   },
   {
     id: "cya_n_hell",
@@ -61,7 +66,7 @@ export const SAYINGS = [
   },
   {
     id: "damn",
-    text: "Damn.",
+    text: "Damn",
   },
   {
     id: "damn_it",
@@ -69,7 +74,7 @@ export const SAYINGS = [
   },
   {
     id: "freedom",
-    text: "I don't know who you are, where you're from, or what you want... but if you threaten my freedom, I'll kill you.",
+    text: "I don't know who you are, where you're from, or what you want... but if you threaten my freedom, I'll kill you",
   },
   {
     id: "game_over",
@@ -77,7 +82,7 @@ export const SAYINGS = [
   },
   {
     id: "good",
-    text: "Damn, I'm good.",
+    text: "Damn, I'm good",
   },
   {
     id: "good_2",
@@ -93,15 +98,15 @@ export const SAYINGS = [
   },
   {
     id: "gotta_hurt",
-    text: "Ooo, that's gotta hurt.",
+    text: "Ooo, that's gotta hurt",
   },
   {
     id: "hail",
-    text: "Hail to the king, baby.",
+    text: "Hail to the king, baby",
   },
   {
     id: "hurts_to_be_you",
-    text: "It hurts to be you.",
+    text: "It hurts to be you",
   },
   {
     id: "independence",
@@ -109,19 +114,19 @@ export const SAYINGS = [
   },
   {
     id: "let_god",
-    text: "Let God sort 'em out.",
+    text: "Let God sort 'em out",
   },
   {
     id: "lets_rock",
-    text: "Let's rock.",
+    text: "Let's rock",
   },
   {
     id: "make_day",
-    text: "Go ahead - make my day.",
+    text: "Go ahead - make my day",
   },
   {
     id: "medieval",
-    text: "I'm gonna get medieval on your asses.",
+    text: "I'm gonna get medieval on your asses",
   },
   {
     id: "mess",
@@ -129,11 +134,11 @@ export const SAYINGS = [
   },
   {
     id: "name",
-    text: "My name's Duke Nukem.",
+    text: "My name's Duke Nukem",
   },
   {
     id: "out_of_gum",
-    text: "It's time to kick ass and chew bubblegum... and I'm all outta gum.",
+    text: "It's time to kick ass and chew bubblegum... and I'm all outta gum",
   },
   {
     id: "payback_time",
@@ -141,15 +146,15 @@ export const SAYINGS = [
   },
   {
     id: "pisses_me",
-    text: "This pisses me off.",
+    text: "This pisses me off",
   },
   {
     id: "play",
-    text: "Hmmm. Don't have time to play with myself.",
+    text: "Hmmm. Don't have time to play with myself",
   },
   {
     id: "ready_for_action",
-    text: "Ready for action.",
+    text: "Ready for action",
   },
   {
     id: "terminated",
@@ -157,11 +162,11 @@ export const SAYINGS = [
   },
   {
     id: "this_sucks",
-    text: "Oops. This sucks.",
+    text: "Oops. This sucks",
   },
   {
     id: "ugly",
-    text: "Damn! You're ugly.",
+    text: "Damn! You're ugly",
   },
   {
     id: "who_wants_some",
@@ -177,7 +182,7 @@ export const SAYINGS = [
   },
   {
     id: "you_suck",
-    text: "You suck.",
+    text: "You suck",
   },
   {
     id: "you_guys_suck",
@@ -185,6 +190,6 @@ export const SAYINGS = [
   },
   {
     id: "you_will_die",
-    text: "You're gonna die for that.",
+    text: "You're gonna die for that",
   },
 ] as const;
