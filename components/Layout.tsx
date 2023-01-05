@@ -26,8 +26,8 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
       <meta content="/logo.webp" property="og:image" />
       <meta content={description} property="og:description" />
 
-      <link href="/favicon.png" rel="shortcut icon" />
-      <link href="/favicon.png" rel="apple-touch-icon" />
+      <link href="/icon.png" rel="shortcut icon" />
+      <link href="/icon.png" rel="apple-touch-icon" />
       <link href="/favicon.png" rel="icon" />
       <link href="/manifest.json" rel="manifest" />
 
