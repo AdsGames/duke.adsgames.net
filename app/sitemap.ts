@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = SAYINGS.map(
     (saying) =>
       ({
-        url: `${WEBSITE_INFO.url}/${saying.id}`,
+        url: `${WEBSITE_INFO.url}/${saying.id}/`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
