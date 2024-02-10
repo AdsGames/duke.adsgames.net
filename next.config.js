@@ -6,12 +6,8 @@ const { withSentryConfig } = require("@sentry/nextjs");
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  output: "export",
   sentry: {
     hideSourceMaps: true,
-  },
-  images: {
-    unoptimized: true,
   },
 };
 
