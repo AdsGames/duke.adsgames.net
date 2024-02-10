@@ -1,9 +1,6 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 "use client";
 
 import { sendGAEvent } from "@next/third-parties/google";
-
-/* eslint-disable jsx-a11y/media-has-caption */
 
 /* eslint-disable jsx-a11y/media-has-caption */
 
