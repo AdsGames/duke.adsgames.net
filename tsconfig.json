@@ -17,14 +17,21 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "sentry.client.config.js",
-    "sentry.server.config.js"
+    "sentry.client.config.ts",
+    "sentry.server.config.ts",
+    "sentry.edge.config.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

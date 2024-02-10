@@ -11,4 +11,18 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(nextConfig, { silent: true });
+module.exports = withSentryConfig(
+  nextConfig,
+  {
+    silent: true,
+    org: "ads-games",
+    project: "duke-adsgames-net",
+  },
+  {
+    widenClientFileUpload: true,
+    transpileClientSDK: false,
+    hideSourceMaps: true,
+    disableLogger: true,
+    automaticVercelMonitors: true,
+  },
+);

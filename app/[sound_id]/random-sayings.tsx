@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import type { Saying } from "@/constants/sayings";
 import { randomSayings } from "@/lib/random-sayings";
 
-import styles from "./RandomSayings.module.css";
+import styles from "./random-sayings.module.css";
 
 export const RandomSayings = () => {
   const [sayings, setSayings] = useState<Saying[]>([]);
@@ -19,15 +21,11 @@ export const RandomSayings = () => {
       <ul className={styles.list}>
         {sayings.map((saying) => (
           <li className={styles.list_item} key={saying.id}>
-            <Link href={`/${saying.id}`}>
-              <a>{saying.text}</a>
-            </Link>
+            <Link href={`/${saying.id}`}>{saying.text}</Link>
           </li>
         ))}
         <li className={styles.list_item}>
-          <Link href="/">
-            <a>View All</a>
-          </Link>
+          <Link href="/">View All</Link>
         </li>
       </ul>
     </section>
