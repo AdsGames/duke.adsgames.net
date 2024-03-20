@@ -18,6 +18,10 @@ export interface SayingData {
 export const getSayingData = (soundId: string): SayingData | null => {
   const saying = SAYINGS.find((elem) => elem.id === soundId);
 
+  if (!saying) {
+    return null;
+  }
+
   const sources = SOUND_FORMATS.map((format) => {
     const file = `/sounds/${format.ext}/${soundId}.${format.ext}`;
     const fullPath = `${__dirname}/../../../../public${file}`;
@@ -32,10 +36,6 @@ export const getSayingData = (soundId: string): SayingData | null => {
       url: file,
     };
   });
-
-  if (!saying) {
-    return null;
-  }
 
   return {
     soundId: saying.id,
